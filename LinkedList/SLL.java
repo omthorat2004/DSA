@@ -66,14 +66,37 @@ public class SLL {
   }
 
   void delete(int location) {
+    if (location < 0 || location >= size) {
+      System.out.println("Invalid location");
+      return;
+    }
+
     if (head == null) {
       return;
     }
     if (location == 0) {
       head = head.next;
       size--;
+      return;
     }
-    if (location == size - 1) {}
+    if (location == size - 1) {
+      ListNode temp = head;
+      while (temp.next.next != null) {
+        temp = temp.next;
+      }
+
+      temp.next = null;
+      size--;
+      return;
+    } else {
+      ListNode temp = head;
+
+      for (int i = 0; i < location - 1; i++) {
+        temp = temp.next;
+      }
+      temp.next = temp.next.next;
+      size--;
+    }
   }
 
   void search(int value) {
@@ -94,8 +117,12 @@ public class SLL {
     sll.insert(0, 0);
     sll.insert(2, 1);
     sll.insert(1, 1);
+    sll.insert(3, 3);
     System.out.println(sll.size);
     sll.traverse();
     sll.search(2);
+
+    sll.delete(1);
+    sll.traverse();
   }
 }
