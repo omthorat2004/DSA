@@ -100,16 +100,70 @@ public class BT {
     System.out.print(root.data + " ");
   }
 
+  public void left(Node root) {
+    if (root.right == null && root.left == null) {
+      System.out.println(root.data);
+      return;
+    }
+
+    left(root.left);
+  }
+
+  public void leafBFS(Node root) {
+    if (root.left == null && root.right == null) {
+      System.out.println(root.data);
+      return;
+    }
+
+    leafBFS(root.left);
+    leafBFS(root.right);
+  }
+
+  public int maxSumLevel(Node root) {
+    Queue<Node> queue = new LinkedList<>();
+    int maxSum = root.data;
+
+    queue.add(root);
+
+    while (!queue.isEmpty()) {
+      int sum = 0;
+      int size = queue.size();
+
+      for (int i = 0; i < size; i++) {
+        Node node = queue.poll();
+        sum += node.data;
+
+        if (node.left != null) {
+          queue.add(node.left);
+        }
+        if (node.right != null) {
+          queue.add(node.right);
+        }
+      }
+      System.out.println(sum);
+
+      maxSum = Math.max(sum, maxSum);
+    }
+    return maxSum;
+  }
+
   public static void main(String[] args) {
     BT bt = new BT();
 
     bt.insert(1);
-    bt.insert(2);
-    bt.insert(3);
-    bt.insert(4);
+    bt.insert(7);
+    bt.insert(6);
     bt.insert(5);
 
-    bt.bfs();
-    bt.inOrder(bt.root);
+    bt.insert(3);
+
+    // bt.bfs();
+    // bt.inOrder(bt.root);
+
+    // bt.left(bt.root);
+    // bt.leafBFS(bt.root);
+
+    int maxSum = bt.maxSumLevel(bt.root);
+    System.out.println(maxSum);
   }
 }
