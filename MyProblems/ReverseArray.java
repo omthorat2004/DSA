@@ -4,6 +4,8 @@ public class ReverseArray {
     int[] arr = { 1, 2, 3, 4 };
     int n = arr.length;
 
+    
+
     int mid = n / 2;
     System.out.println(mid);
 
