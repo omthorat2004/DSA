@@ -8,7 +8,7 @@ public class ReverseArray {
 
     int mid = n / 2;
     System.out.println(mid);
-
+sss
     int i = 0;
     while (i < mid) {
       int temp = arr[i];
