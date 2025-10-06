@@ -5,8 +5,8 @@ public class ReverseArray {
     int n = arr.length;
 
         
+  
 
-    int mid = n / 2;
     System.out.println(mid);
 sss
     int i = 0;
