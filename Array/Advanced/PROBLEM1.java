@@ -6,6 +6,6 @@
 
 public class PROBLEM1 {
 
-  public static void
+  public stati void
   }
 }
