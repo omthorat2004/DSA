@@ -7,7 +7,7 @@
 public class PROBLEM1 {
 
   public static void main(String[] args) {
-    int[] arr = { 10, 5, 2, 7, 1, 9 ;
+    int[] arr = { 10, 5, 2, 79 ;
     int k = 15;
   }
 }
