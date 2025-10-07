@@ -6,6 +6,5 @@
 
 public class PROBLEM1 {
 
-  public stati void
-  }s
+bwbuiwbicwbcubwcbwuci
 }
