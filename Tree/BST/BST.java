@@ -25,7 +25,7 @@ public class BST {
       return true;
     }
 
-    return key < root.value ? search(root.left, key) : search(root.right, key);
+    return  search(root.left, key) : search(root.right, key);
   }
 
   void inOrder(TreeNodeB root) {
